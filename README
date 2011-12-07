@@ -1,0 +1,13 @@
+*** 用途
+vimでのless編集結果から自動的にcssを生成
+
+*** 前提
+サーバサイドにlessがインストール済み
+
+ex) npm install less
+
+*** 使い方
+
+lessファイルのファイルタイプを定義すれば動作するはず
+
+au! BufRead,BufNewFile *.less set filetype=less
