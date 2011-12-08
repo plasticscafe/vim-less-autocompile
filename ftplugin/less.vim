@@ -13,7 +13,7 @@ if g:less_autocompile != 0
   try
     let css_name = expand("%:r") . ".css"  
     let less_name = expand("%")  
-    silent execute ':!lessc -x ' . less_name . ' ' . css_name . ' 2> /dev/null' 
+    silent execute ':!lessc -x ' . less_name . ' ' . css_name . ' 1> /dev/null 2>&1' 
     let less_date = system('date -r ' . less_name . ' +%s') 
     let css_date = system('date -r ' . css_name . ' +%s') 
     if css_date < less_date
