@@ -3,7 +3,9 @@
 " Author:     Naoyuki ABE <plasticscafe@gmail.com>
 " Last Change: 2011 Dec 7
 
-let g:less_autocompile = 0
+if !exists('g:less_autocompile')
+  let g:less_autocompile = 0
+endif
 if system('which lessc') != ''
 autocmd BufWritePost,BufEnter *.less call s:auto_less_compile()
 function! s:auto_less_compile() " {{{
