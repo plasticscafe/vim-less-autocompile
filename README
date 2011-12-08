@@ -12,6 +12,10 @@ lessファイルのファイルタイプを定義すれば動作するはず
 
 au! BufRead,BufNewFile *.less set filetype=less
 
+読み込み時は自動コンパイル設定ていないので下記変数を定義
+let g:less_autocompile=1
+
+
 
 ### エラー検出 ###
 
