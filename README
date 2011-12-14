@@ -15,7 +15,13 @@ au! BufRead,BufNewFile *.less set filetype=less
 読み込み時は自動コンパイル設定ていないので下記変数を定義
 let g:less_autocompile=1
 
+### 圧縮設定 ###
 
+cssを圧縮する場合は
+let g:less_compress = 1
+
+圧縮しない場合（デフォルト）
+let g:less_compress = 0
 
 ### エラー検出 ###
 
