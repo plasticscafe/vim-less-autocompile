@@ -4,7 +4,7 @@ vimでのless編集結果から自動的にcssを生成
 ### 前提 ###
 サーバサイドにlessがインストール済み
 
-ex) npm install less
+ex) npm install -g less
 
 ### 使い方 ###
 
