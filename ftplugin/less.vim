@@ -21,13 +21,15 @@ if g:less_autocompile != 0
   try
     let css_name = expand("%:r") . ".css"  
     let less_name = expand("%")  
-    silent execute ':!lessc ' . compress_option . less_name . ' ' . css_name . ' 2> /dev/null' 
-    let less_date = system('date -r ' . less_name . ' +%s') 
-    let css_date = system('date -r ' . css_name . ' +%s') 
-    if css_date < less_date
-      highlight StatusLine ctermfg=Red
-    else
-      highlight StatusLine ctermfg=none 
+    if filereadable(css_name) || 0 < getfsize(less_name)
+      silent execute ':!lessc ' . compress_option . less_name . ' ' . css_name . ' 2> /dev/null' 
+      let less_date = system('date -r ' . less_name . ' +%s') 
+      let css_date = system('date -r ' . css_name . ' +%s') 
+      if !filereadable(css_name) || css_date < less_date
+        highlight StatusLine ctermfg=Red
+      else
+        highlight StatusLine ctermfg=none 
+      endif
     endif
   endtry
 endif
